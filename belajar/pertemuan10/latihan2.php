@@ -1,25 +1,12 @@
 <?php
 
-//Koneksi ke DB & pilih DB
-$db = mysqli_connect('localhost', 'root', '', 'belajar');
-
-//Query tabel belajar
-$result = mysqli_query($db, "SELECT * FROM daftar_buku");
-
-//Ubah data ke dalam array
-// $row = mysqli_fetch_row($result); //Array Numeric
-// $row = mysqli_fetch_assoc($result); // Aray Associative
-$rows = [];
-while ($row = mysqli_fetch_array($result)) {
-  $rows[] = $row;
-}; //Aray Associative dan Numeric
+//hubugkan halaman latihan2.php dengan functions.php
+require 'functions.php';
 
 //Tampung ke variable data_buku
-$daftar_buku = $rows;
+$daftar_buku = query("SELECT * FROM daftar_buku");
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
